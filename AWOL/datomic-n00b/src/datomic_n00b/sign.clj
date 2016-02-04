@@ -1,6 +1,5 @@
 (ns datomic-n00b.sign
   (:require
-  (:require
     [datomic.api :as d]))
 
 ;adding entities
