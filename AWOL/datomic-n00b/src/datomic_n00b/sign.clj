@@ -1,4 +1,7 @@
-(ns datomic-n00b.sign)
+(ns datomic-n00b.sign
+  (:require
+  (:require
+    [datomic.api :as d]))
 
 ;adding entities
 ;@(d/transact conn [{:db/id #db/id[:db.part/user] :user/name "adam" :user/email "adam@junkey.com" :user/password "qwerty"}])

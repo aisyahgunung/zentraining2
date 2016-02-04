@@ -3,6 +3,9 @@
     [datomic.api :as d]))
 
 (def uri "datomic:mem://n00b")
+(def conn (d/connect uri))
+(def schema-1 (read-string
+                (slurp "resources/schema.edn")))
 
 
 (defn starting []
@@ -13,10 +16,7 @@
 
 
 (defn make-schema []
-  (let [conn (d/connect uri)
-        schema-1 (read-string
-                   (slurp "resources/schema.edn"))]
-    @(d/transact conn schema-1)
-    (println "Schema created !!!")))
+  @(d/transact conn schema-1)
+  (println "Schema created !!!"))
 
 (make-schema)
