@@ -2,4 +2,4 @@
 
 (use '[datomic.api :only [q db] :as d])
 
-(def uri "datomic:free://localhost:4334/n00b-db")
+(def uri "datomic:mem://n00b")
