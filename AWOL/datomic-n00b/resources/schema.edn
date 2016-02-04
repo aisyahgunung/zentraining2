@@ -1,59 +1,25 @@
-[{:db/id                 #db/id[:db.part/db]
-  :db/ident              :person/name
-  :db/valueType          :db.type/string
-  :db/cardinality        :db.cardinality/one
-  :db/doc                "A person's name"
+[
+ ;; ----- User type -----
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A users name"
+  :db/unique :db.unique/identity
   :db.install/_attribute :db.part/db}
 
  {:db/id #db/id[:db.part/db]
-  :db/ident :person/name
+  :db/ident :user/email
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
-  :db/doc "A person's name"
+  :db/doc "A users email"
+  :db/unique :db.unique/identity
   :db.install/_attribute :db.part/db}
 
-
-
- ;; ----- User Schema -----
-
- {:db/id                 #db/id[:db.part/db]
-  :db/ident              :user/uuid
-  :db/valueType          :db.type/string
-  :db/cardinality        :db.cardinality/one
-  :db/doc                "User uuid"
-  :db/unique             :db.unique/identity
-  :db.install/_attribute :db.part/db}
-
- {:db/id                 #db/id[:db.part/db]
-  :db/ident              :user/username
-  :db/valueType          :db.type/string
-  :db/cardinality        :db.cardinality/one
-  :db/doc                "A users name"
-  :db/unique             :db.unique/identity
-  :db.install/_attribute :db.part/db}
-
- {:db/id                 #db/id[:db.part/db]
-  :db/ident              :user/password
-  :db/valueType          :db.type/string
-  :db/cardinality        :db.cardinality/one
-  :db/doc                "A users password"
-  :db.install/_attribute :db.part/db}
-
- {:db/id                 #db/id[:db.part/db]
-  :db/ident              :user/role
-  :db/valueType          :db.type/ref
-  :db/isComponent        true
-  :db/cardinality        :db.cardinality/one
-  :db/doc                "Reference for user type"
-  :db.install/_attribute :db.part/db}
-
- ;; ----- User Type Schema -----
-
- {:db/id                 #db/id[:db.part/db]
-  :db/ident              :role/type
-  :db/valueType          :db.type/string
-  :db/cardinality        :db.cardinality/one
-  :db/unique             :db.unique/identity
-  :db/doc                "User member type"
+ {:db/id #db/id[:db.part/db]
+  :db/ident :user/password
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A users password"
   :db.install/_attribute :db.part/db}
  ]

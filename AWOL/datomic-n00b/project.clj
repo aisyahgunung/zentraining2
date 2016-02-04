@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [com.datomic/datomic-free "0.9.5327"]
                  [expectations "2.1.4"]]
-  :jvm-opts ^:replace ["-Xmx1g" "-server"])
+  :jvm-opts ^:replace ["-Xmx1g" "-server"]
+  :profiles {:dev {:source-paths ["dev"]}})
 
 
